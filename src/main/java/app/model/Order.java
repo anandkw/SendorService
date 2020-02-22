@@ -1,11 +1,16 @@
 package app.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.List;
 
+@Entity
 public class Order {
+
+	@Id
 	private String orderId;
 	private List<Product> products;
-	private Receipient receipient;
+	private Recipient recipient;
 
 	public String getOrderId() {
 		return orderId;
@@ -23,11 +28,11 @@ public class Order {
 		this.products = products;
 	}
 
-	public Receipient getReceipient() {
-		return receipient;
+	public Recipient getRecipient() {
+		return recipient;
 	}
 
-	public void setReceipient(Receipient receipient) {
-		this.receipient = receipient;
+	public void setRecipient(Recipient recipient) {
+		this.recipient = recipient;
 	}
 }

@@ -1,8 +1,20 @@
 package app.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.List;
 
-public class Receipient {
+@Entity
+public class Recipient {
+
+	@Id
+	@GeneratedValue
+	@JsonIgnore
+	private Long id;
+
 	private Profile basicProfile;
 	private List<Address> addresses;
 
