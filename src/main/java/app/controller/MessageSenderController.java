@@ -51,6 +51,10 @@ public class MessageSenderController {
 
 	private void saveAndLogOrder(Order order) {
 		LOGGER.info("Saving order...");
+		orderRepository.findById(order.getOrderId())
+				.ifPresent( order1 ->  {
+					throw new RuntimeException("order already present with id - " + order1.getOrderId());
+				});
 		orderRepository.save(order);
 		LOGGER.info("Order Saved");
 	}

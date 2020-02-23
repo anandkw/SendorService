@@ -14,22 +14,21 @@ public class DataSourceConfig {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUsername("testcs");
+		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		dataSource.setUsername("root");
 		dataSource.setPassword("ueducation");
 		dataSource.setUrl(
-				"jdbc\\:mysql\\://localhost\\:3306/anand_test_db?createDatabaseIfNotExist=true");
-
+				"jdbc:mysql://localhost:3306/anand_test_db?createDatabaseIfNotExist=true");
 		return dataSource;
 	}
 
-	@Bean
-	public Properties additionalProperties() {
-		Properties properties = new Properties();
-		properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
-		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
-
-		return properties;
-	}
+//	@Bean
+//	public Properties additionalProperties() { TODO : check why properties are not getting applied when defining a bean but works fine when defined in appication.yml
+//		Properties properties = new Properties();
+//		properties.setProperty("spring.jpa.hibernate.ddl-auto", "create-drop");
+//		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
+//
+//		return properties;
+//	}
 
 }
