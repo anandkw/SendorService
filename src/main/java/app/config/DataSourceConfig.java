@@ -18,7 +18,7 @@ public class DataSourceConfig {
 		dataSource.setUsername("root");
 		dataSource.setPassword("ueducation");
 		dataSource.setUrl(
-				"jdbc:mysql://localhost:3306/anand_test_db?createDatabaseIfNotExist=true");
+				"jdbc:mysql://127.0.0.1:3306/anand_test_db?createDatabaseIfNotExist=true");
 		return dataSource;
 	}
 
